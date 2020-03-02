@@ -1,1 +1,1 @@
-My code from the Cuursera course by Prof. Andrew Ng from Stanford University
+My code from the Coursera course by Prof. Andrew Ng from Stanford University
