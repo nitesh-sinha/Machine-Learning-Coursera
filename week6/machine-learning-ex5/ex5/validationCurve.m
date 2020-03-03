@@ -43,8 +43,8 @@ for i = 1:length(lambda_vec)
   computedTheta = trainLinearReg(X, y, lambda_vec(i));
   
   % Lets calculate training and validation errors(without regularization)
-  error_train(i) = linearRegCostFunction(X, y, computedTheta, 0);
-  error_val(i) = linearRegCostFunction(Xval, yval, computedTheta, 0);
+  [error_train(i) g] = linearRegCostFunction(X, y, computedTheta, 0);
+  [error_val(i) g] = linearRegCostFunction(Xval, yval, computedTheta, 0);
 endfor
 
 % =========================================================================
