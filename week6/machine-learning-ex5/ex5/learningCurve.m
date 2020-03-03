@@ -53,11 +53,17 @@ error_val   = zeros(m, 1);
 
 % ---------------------- Sample Solution ----------------------
 
-
-
-
-
-
+for i = 1:m
+  subset_x = X(1:i,:);
+  subset_y = y(1:i);
+  computed_theta = trainLinearReg(subset_x, subset_y, lambda);
+  
+  % Now calculate errors
+  % Train error on first i training examples
+  % Cross validation error on entire CV set
+  error_train(i) = linearRegCostFunction(subset_x, subset_y, computed_theta, 0); % Set lambda = 0(no regularizarion)
+  error_val(i) = linearRegCostFunction(Xval, yval, computed_theta, 0);
+endfor
 
 % -------------------------------------------------------------
 
