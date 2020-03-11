@@ -26,10 +26,11 @@ clear ; close all; clc
 %  complete the code in processEmail.m to produce a word indices vector
 %  for a given email.
 
-fprintf('\nPreprocessing sample email (emailSample1.txt)\n');
+% Spam Emails(in ../spam/ dir) downloded from http://spamassassin.apache.org/old/publiccorpus/
+fprintf('\nPreprocessing sample email (00001.7848dde101aa985090474a91ec93fcf0)\n');
 
 % Extract Features
-file_contents = readFile('emailSample1.txt');
+file_contents = readFile('00001.7848dde101aa985090474a91ec93fcf0');
 word_indices  = processEmail(file_contents);
 
 % Print Stats
@@ -125,14 +126,94 @@ pause;
 % Set the file to be read in (change this to spamSample2.txt,
 % emailSample1.txt or emailSample2.txt to see different predictions on
 % different emails types). Try your own emails as well!
-filename = 'spamSample1.txt';
+  filename = 'spamSample1.txt';
 
-% Read and predict
-file_contents = readFile(filename);
-word_indices  = processEmail(file_contents);
-x             = emailFeatures(word_indices);
-p = svmPredict(model, x);
+  % Read and predict
+  file_contents = readFile(filename);
+  word_indices  = processEmail(file_contents);
+  x             = emailFeatures(word_indices);
+  p = svmPredict(model, x);
 
-fprintf('\nProcessed %s\n\nSpam Classification: %d\n', filename, p);
-fprintf('(1 indicates spam, 0 indicates not spam)\n\n');
+  fprintf('\nProcessed %s\n\nSpam Classification: %d\n', filename, p);
+  fprintf('(1 indicates spam, 0 indicates not spam)\n\n');
+  pause;
 
+
+
+  filename = 'spamSample2.txt';
+
+  % Read and predict
+  file_contents = readFile(filename);
+  word_indices  = processEmail(file_contents);
+  x             = emailFeatures(word_indices);
+  p = svmPredict(model, x);
+
+  fprintf('\nProcessed %s\n\nSpam Classification: %d\n', filename, p);
+  fprintf('(1 indicates spam, 0 indicates not spam)\n\n');
+  pause;
+  
+  
+  
+  filename = 'emailSample1.txt'; 
+
+  % Read and predict
+  file_contents = readFile(filename);
+  word_indices  = processEmail(file_contents);
+  x             = emailFeatures(word_indices);
+  p = svmPredict(model, x);
+
+  fprintf('\nProcessed %s\n\nSpam Classification: %d\n', filename, p);
+  fprintf('(1 indicates spam, 0 indicates not spam)\n\n');
+  pause;
+
+  
+  filename = 'emailSample2.txt';
+
+  % Read and predict
+  file_contents = readFile(filename);
+  word_indices  = processEmail(file_contents);
+  x             = emailFeatures(word_indices);
+  p = svmPredict(model, x);
+
+  fprintf('\nProcessed %s\n\nSpam Classification: %d\n', filename, p);
+  fprintf('(1 indicates spam, 0 indicates not spam)\n\n');
+  pause;
+
+  
+  filename = 'spamSample3.txt'; % Incorrectly tagged by trained algo
+
+  % Read and predict
+  file_contents = readFile(filename);
+  word_indices  = processEmail(file_contents);
+  x             = emailFeatures(word_indices);
+  p = svmPredict(model, x);
+
+  fprintf('\nProcessed %s\n\nSpam Classification: %d\n', filename, p);
+  fprintf('(1 indicates spam, 0 indicates not spam)\n\n');
+  pause;
+
+  
+  filename = 'emailSample3.txt';
+
+  % Read and predict
+  file_contents = readFile(filename);
+  word_indices  = processEmail(file_contents);
+  x             = emailFeatures(word_indices);
+  p = svmPredict(model, x);
+
+  fprintf('\nProcessed %s\n\nSpam Classification: %d\n', filename, p);
+  fprintf('(1 indicates spam, 0 indicates not spam)\n\n');
+  pause;
+  
+  
+  filename = 'spamSample4.txt'; % Incorrectly tagged by trained algo
+
+  % Read and predict
+  file_contents = readFile(filename);
+  word_indices  = processEmail(file_contents);
+  x             = emailFeatures(word_indices);
+  p = svmPredict(model, x);
+
+  fprintf('\nProcessed %s\n\nSpam Classification: %d\n', filename, p);
+  fprintf('(1 indicates spam, 0 indicates not spam)\n\n');
+  pause;
