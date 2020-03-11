@@ -22,10 +22,20 @@ idx = zeros(size(X,1), 1);
 %
 
 
-
-
-
-
+m = size(X,1);
+for i = 1:m
+  distToCentroid = zeros(size(centroids, 1),1);
+  %fprintf("For tranining example : %f \n", i);
+  % For each training example, calculate its distance to every centroid
+  for k = 1:K
+    diff = X(i,:) - centroids(k,:);
+    distXToCentroid = sum(diff.^2);
+    %fprintf("Disatnce to centroid %f is : %f \n", k, distXToCentroid);
+    distToCentroid(k) = distXToCentroid;
+  endfor
+  [minimum, minIdx] = min(distToCentroid);
+  idx(i) = minIdx;
+endfor
 
 % =============================================================
 
