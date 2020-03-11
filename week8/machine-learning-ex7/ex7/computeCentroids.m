@@ -26,12 +26,12 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-
-
-
-
-
-
+for k = 1:K
+  SetKthCentroid = (idx == k); % vector of 1s and 0s
+  numElemInKthCluster = sum(SetKthCentroid); % Add all 1's in SetKthCentroid
+  % fprintf("Num elements in cluster %f is: %f \n ", k, numElemInKthCluster);
+  centroids(k,:) =  1/numElemInKthCluster * (SetKthCentroid' * X); % 1Xn vector
+endfor
 
 % =============================================================
 
