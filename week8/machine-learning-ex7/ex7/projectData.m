@@ -17,8 +17,8 @@ Z = zeros(size(X, 1), K);
 %                    x = X(i, :)';
 %                    projection_k = x' * U(:, k);
 %
-
-
+U_reduced = U(:,1:K); % (n X K) matrix
+Z = X * U_reduced; % (m X K) matrix
 
 
 % =============================================================
