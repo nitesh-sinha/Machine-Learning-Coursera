@@ -50,10 +50,12 @@ end
 
 % Display Image
 h = imagesc(display_array, [-1 1]);
+% h = imagesc(display_array);
 
 % Do not show axis
 axis image off
 
 drawnow;
+colorbar;
 
 end
