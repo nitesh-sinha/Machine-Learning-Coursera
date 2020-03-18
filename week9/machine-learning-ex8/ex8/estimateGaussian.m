@@ -21,12 +21,11 @@ sigma2 = zeros(n, 1);
 %               should contain variance of the i-th feature.
 %
 
+avgRow = sum(X)/m;
+mu = avgRow';
 
-
-
-
-
-
+varRow = 1/m * sum((X-avgRow).^2);
+sigma2 = varRow';
 
 
 
